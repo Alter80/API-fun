@@ -1,9 +1,5 @@
 const loadCountries = () => {
-<<<<<<< HEAD
-    fetch('http://api.countrylayer.com/v2/all?access_key=b4487a01bf0409df56624a4edf125a5a')
-=======
-    fetch('https://api.countrylayer.com/v2/all?access_key=b4487a01bf0409df56624a4edf125a5a')
->>>>>>> f1a2a00d504c5a1b83ade67d380a396b970d18db
+    fetch('https://restcountries.eu/rest/v2/all')
     .then(res => res.json())
     .then(data => displayCountries(data))
 }

@@ -1,5 +1,5 @@
 const loadCountries = () => {
-    fetch('https://restcountries.eu/rest/v2/all')
+    fetch('https://restcountries.com/v2/all')
     .then(res => res.json())
     .then(data => displayCountries(data))
 }
@@ -36,7 +36,7 @@ const displayCountries = countries => {
         // loop through to know the border
         const borders = country.borders;
         let borderList = [];
-        for(const border of borders){
+        for(const border in borders){
             borderList.push(border);
         }
         //console.log(borderList);
@@ -60,8 +60,7 @@ const displayCountries = countries => {
         const para = document.createElement('p');
         para.innerText = `
             Population: ${country.population}
-            Currency Name: ${country.currencies[0].name}
-            Currency symbol: ${country.currencies[0].symbol}
+               
             Subregion: ${country.subregion}
             Borders: ${borderList}
             Languages: ${singleLanguage}
